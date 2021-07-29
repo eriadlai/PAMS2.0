@@ -1,0 +1,43 @@
+﻿@model PAMS_2._0.Data.ViewModel;
+@{
+    ViewData["Title"] = "DetallesGenerales";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h1>DetallesGenerales</h1>
+
+<div class="text-center">
+
+    <ul class="nav nav-tabs">
+
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.Pacientes ? "active" : string.Empty)">
+            <a class="nav-link" asp-route-tabname="Paciente" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">Paciente</a>
+        </li>
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.AntecedentesClinicos ? "active" : string.Empty)">
+            <a class="nav-link" asp-route-tabname="AntecedentesClinicos" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">Antecedentes Clinicos</a>
+        </li>
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.AntecedentesFamiliares ? "active" : string.Empty)">
+            <a class="nav-link" asp-route-tabname="AntecedentesFamiliares" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">AntecedentesFamiliares</a>
+
+        </li>
+    </ul>
+    @switch (Model.tabManagement.ActiveTab)
+    {
+        case PAMS_2._0.Data.Tab.Pacientes:
+            @await Html.PartialAsync("~/Views/Pacientes/Detalles.cshtml");
+            break;
+        case PAMS_2._0.Data.Tab.AntecedentesClinicos:
+            @await Component.InvokeAsync("AntecedentesClinicos", new { id = @Model.paciente.id });
+            break;
+        case PAMS_2._0.Data.Tab.AntecedentesFamiliares:
+            @await Component.InvokeAsync("AntecedentesFamiliaresController", new { id = @Model.paciente.id });
+            break;
+        default:
+            break;
+    }
+
+
+
+</div>
+
