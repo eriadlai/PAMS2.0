@@ -1,0 +1,75 @@
+﻿@model PAMS_2._0.Data.ViewModel;
+@{
+    ViewData["Title"] = "Antecedentes Clinicos";
+}
+
+
+
+
+@if (Model.listaHistorialSexual == null)
+{
+    <p>No existen Registros.</p>
+
+}
+else if (Model.listaHistorialSexual.Count() > 0)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Historial Sexual</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10">
+                @if (TempData["message"] != null)
+                {
+                    <div class="alert alert-warning alert-dismissible fade show " role="alert">
+                        @TempData["message"]
+                        <button type="button" class="close" date-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                }
+            <form method="post" asp-action="Edit" asp-controller="HisSexual">
+                <input type="hidden" asp-for="@Model.historialSexual.idPaciente" class="form-control" />
+                <input type="hidden" asp-for="@Model.historialSexual.id" class="form-control" />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
+                <div class="form-group">
+                    <label asp-for="@Model.historialSexual.abuso" class="control-label"></label>
+                    <input type="radio" asp-for="@Model.historialSexual.abuso" class="form-control"/>
+                    <span asp-validation-for="@Model.historialSexual.abuso" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="@Model.historialSexual.edad" class="control-label"></label>
+                    <input asp-for="@Model.historialSexual.edad" class="form-control"/>
+                    <span asp-validation-for="@Model.historialSexual.edad" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.historialSexual.embarazo" class="control-label"></label>
+                    <input type="radio" value="true" asp-for="@Model.historialSexual.embarazo" class="form-control"/>
+                    <span asp-validation-for="@Model.historialSexual.embarazo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.historialSexual.preferenciaSexual" class="control-label"></label>
+                    <input asp-for="@Model.historialSexual.preferenciaSexual" class="form-control" />
+                    <span asp-validation-for="@Model.historialSexual.preferenciaSexual" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Actualizar Datos" class="btn btn-primary" />
+                </div>
+            </form>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

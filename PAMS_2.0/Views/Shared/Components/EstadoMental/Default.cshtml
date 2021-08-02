@@ -1,0 +1,77 @@
+﻿@model PAMS_2._0.Data.ViewModel;
+@{
+    ViewData["Title"] = "Estado Mental";
+}
+
+
+
+
+@if (Model.estadoMental == null)
+{
+    <p>No existen Registros.</p>
+
+}
+else if (Model.listaEstadoMental.Count() > 0)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Circulo Social</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10">
+                @if (TempData["message"] != null)
+                {
+                    <div class="alert alert-warning alert-dismissible fade show " role="alert">
+                        @TempData["message"]
+                        <button type="button" class="close" date-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                }
+                
+            <form method="post" asp-action="Edit" asp-controller="EstMental">
+                <input type="hidden" asp-for="@Model.estadoMental.idPaciente" />
+                <input type="hidden" asp-for="@Model.estadoMental.id" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="@Model.estadoMental.emocional" class="control-label"></label>
+                    <textarea asp-for="@Model.estadoMental.emocional" class="form-control"></textarea>
+                    <span asp-validation-for="@Model.estadoMental.emocional" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@Model.estadoMental.higiene" class="control-label"></label>
+                    <textarea asp-for="@Model.estadoMental.higiene" class="form-control"></textarea>
+                    <span asp-validation-for="@Model.estadoMental.higiene" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.estadoMental.lenguaje" class="control-label"></label>
+                    <textarea asp-for="@Model.estadoMental.lenguaje" class="form-control"></textarea>
+                    <span asp-validation-for="@Model.estadoMental.lenguaje" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.estadoMental.realidad" class="control-label"></label>
+                    <textarea asp-for="@Model.estadoMental.realidad" class="form-control"></textarea>
+                    <span asp-validation-for="@Model.estadoMental.realidad" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" value="Actualizar Datos" class="btn btn-primary" />
+                </div>
+            </form>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
