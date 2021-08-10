@@ -1,0 +1,118 @@
+﻿@model PAMS_2._0.Data.ViewModel;
+@{ ViewData["Title"] = "Eliminar paciente";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Editar Paciente</h3>
+        </div>
+    </div>
+    <div class="row">
+        @if (TempData["message"] != null)
+        {
+    <div class="alert alert-warning alert-dismissible fade show " role="alert">
+        @TempData["message"]
+        <button type="button" class="close" date-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>            }
+        <div class="col-sm-10">
+            <form method="post" asp-action="Edit">
+                <input type="hidden" asp-for="@Model.paciente.id" />
+                <input hidden="hidden" asp-for="@Model.paciente.ultimaActualizacion" class="form-control" disabled />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <img src='@Url.Action("GetImage", "Pacientes", new {item=@Model.paciente.id })' width="100" height="100" />
+                    <label asp-for="@Model.usuario.fotoFile" class="control-label"></label>
+                    <input asp-for="@Model.usuario.fotoFile" accept="image/*" />
+                    <span asp-validation-for="@Model.usuario.fotoFile" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="@Model.paciente.nombre" class="control-label"></label>
+                    <input asp-for="@Model.paciente.nombre" class="form-control" />
+                    <span asp-validation-for="@Model.paciente.nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.paciente.apellido" class="control-label"></label>
+                    <input asp-for="@Model.paciente.apellido" class="form-control" />
+                    <span asp-validation-for="@Model.paciente.apellido" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.paciente.telefono" class="control-label"></label>
+                    <input maxlength="10" asp-for="@Model.paciente.telefono" class="form-control" />
+                    <span asp-validation-for="@Model.paciente.telefono" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.paciente.nacimiento" class="control-label"></label>
+                    <input asp-for="@Model.paciente.nacimiento" class="form-control" />
+                    <span asp-validation-for="@Model.paciente.nacimiento" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.paciente.direccion" class="control-label"></label>
+                    <input asp-for="@Model.paciente.direccion" class="form-control" />
+                    <span asp-validation-for="@Model.paciente.direccion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.paciente.escolaridad" class="control-label"></label>
+                    <select class="form-select" asp-for="@Model.paciente.escolaridad">
+                        <option value="Ninguna">Ninguna</option>
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Preparatoria">Preparatoria</option>
+                        <option value="Licenciatura">Licenciatura</option>
+                        <option value="Ingenieria">Ingenieria</option>
+                        <option value="Maestria">Maestria</option>
+                        <option value="Doctorado">Doctorado</option>
+                    </select>
+                    <span asp-validation-for="@Model.paciente.escolaridad" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.paciente.ocupacion" class="control-label"></label>
+                    <input asp-for="@Model.paciente.ocupacion" class="form-control" />
+                    <span asp-validation-for="@Model.paciente.ocupacion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.paciente.religion" class="control-label"></label>
+                    <select class="form-select" asp-for="@Model.paciente.religion">
+                        <option value="Cristiano">Cristiano</option>
+                        <option value="Catolico">Catolico</option>
+                        <option value="Ateo">Ateo</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <span asp-validation-for="@Model.paciente.religion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.paciente.servicio" class="control-label"></label>
+                    <input asp-for="@Model.paciente.servicio" class="form-control" />
+                    <span asp-validation-for="@Model.paciente.servicio" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.paciente.asunto" class="control-label"></label>
+                    <input asp-for="@Model.paciente.asunto" class="form-control" />
+                    <span asp-validation-for="@Model.paciente.asunto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.paciente.actividadExtra" class="control-label"></label>
+                    <input asp-for="@Model.paciente.actividadExtra" class="form-control" />
+                    <span asp-validation-for="@Model.paciente.actividadExtra" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Editar paciente" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+@section Scripts{
+    @{
+<partial name="_ValidationScriptsPartial" /> }
+}
+
+

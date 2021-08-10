@@ -1,0 +1,66 @@
+﻿@model PAMS_2._0.Data.ViewModel;
+
+@{ ViewData["Title"] = "Lista de Pacientes";}
+
+<div class="container">
+    @if (TempData["message"] != null)
+    {
+<div class="alert alert-warning alert-dismissible fade show " role="alert">
+    @TempData["message"]
+    <button type="button" class="close" date-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>}
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>Familiares</h4>
+        </div>
+        <div class="col-sm-6">
+            <a class="btn btn-success d-block" asp-route-id="@Model.paciente.id" asp-action="Create" asp-controller="Fam">Agregar Familiar</a>
+        </div>
+    </div>
+    <div class="row">
+
+        @if (Model.listaFamiliares.Count() > 0)
+        {
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.listaFamiliares.First().id)</td>
+            <td>@Html.DisplayNameFor(m => m.listaFamiliares.First().nacimiento)</td>
+            <td>@Html.DisplayNameFor(m => m.listaFamiliares.First().nombre)</td>
+            <td>@Html.DisplayNameFor(m => m.listaFamiliares.First().apellido)</td>
+            <td>@Html.DisplayNameFor(m => m.listaFamiliares.First().parentesco)</td>
+            <td>@Html.DisplayNameFor(m => m.listaFamiliares.First().ocupacion)</td>
+            <td>Acciones</td>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.listaFamiliares)
+        {
+<tr>
+    <td>@item.id</td>
+    <td>@item.nacimiento</td>
+    <td>@item.nombre</td>
+    <td>@item.apellido</td>
+    <td>@item.parentesco</td>
+    <td>@item.ocupacion</td>
+    <td>
+        <a asp-controller="Fam" asp-action="Edit" asp-route-id="@item.id" class="btn btn-warning">Editar</a>
+        <form method="post" asp-action="Delete" asp-controller="Fam" asp-route-id="@item.id">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+        </form>
+    </td>
+
+</tr>
+}
+    </tbody>
+</table> }
+else
+{ <p>No existen Registros.</p>}
+
+    </div>
+</div>
+

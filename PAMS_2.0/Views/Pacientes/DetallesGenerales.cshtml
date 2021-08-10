@@ -1,0 +1,87 @@
+﻿@model PAMS_2._0.Data.ViewModel;
+@{ ViewData["Title"] = "DetallesGenerales";}
+
+<h1>Detalles Generales</h1>
+
+<div class="text-center">
+
+    <ul class="nav nav-pills" id="myTab" role="tablist">
+
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.Pacientes ? "active" : string.Empty)">
+            <a class="nav-link " asp-route-tabname="Paciente" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">Paciente</a>
+        </li>
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.AntecedentesClinicos ? "active" : string.Empty)">
+            <a class="nav-link" asp-route-tabname="AntecedentesClinicos" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">Antecedentes Clinicos</a>
+        </li>
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.AntecedentesFamiliares ? "active" : string.Empty)">
+            <a class="nav-link" asp-route-tabname="AntecedentesFamiliares" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">Antecedentes Familiares</a>
+
+        </li>
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.CirculoSocial ? "active" : string.Empty)">
+            <a class="nav-link" asp-route-tabname="CirculoSocial" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">Circulo Social</a>
+        </li>
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.EstadoMental ? "active" : string.Empty)">
+            <a class="nav-link" asp-route-tabname="EstadoMental" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">Estado Mental</a>
+        </li>
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.Familiares ? "active" : string.Empty)">
+            <a class="nav-link" asp-route-tabname="Familiares" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">Familiares</a>
+        </li>
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.Habitos ? "active" : string.Empty)">
+            <a class="nav-link" asp-route-tabname="Habitos" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">Habitos</a>
+        </li>
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.HistorialSexual ? "active" : string.Empty)">
+            <a class="nav-link" asp-route-tabname="HistorialSexual" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">Historial Sexual</a>
+        </li>
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.Problema ? "active" : string.Empty)">
+            <a class="nav-link" asp-route-tabname="Problema" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">Definicion del Problema</a>
+        </li>
+        <li class="nav-item @(Model.tabManagement.ActiveTab==PAMS_2._0.Data.Tab.ReporteSesion ? "active" : string.Empty)">
+            <a class="nav-link" asp-route-tabname="ReporteSesion" asp-action="DetallesGenerales" asp-route-id="@Model.paciente.id">Reporte de Sesion</a>
+        </li>
+    </ul>
+
+    @switch (Model.tabManagement.ActiveTab)
+    {
+        case PAMS_2._0.Data.Tab.Pacientes:
+@await Html.PartialAsync("~/Views/Pacientes/Detalles.cshtml");
+break;
+case PAMS_2._0.Data.Tab.AntecedentesClinicos:
+@await Component.InvokeAsync("AntecedentesClinicos", new { id = @Model.paciente.id });
+break;
+case PAMS_2._0.Data.Tab.AntecedentesFamiliares:
+@await Component.InvokeAsync("AntecedentesFamiliares", new { id = @Model.paciente.id });
+break;
+case PAMS_2._0.Data.Tab.CirculoSocial:
+@await Component.InvokeAsync("CirculoSocial", new { id = @Model.paciente.id });
+break;
+case PAMS_2._0.Data.Tab.EstadoMental:
+@await Component.InvokeAsync("EstadoMental", new { id = @Model.paciente.id });
+break;
+case PAMS_2._0.Data.Tab.Habitos:
+@await Component.InvokeAsync("Habitos", new { id = @Model.paciente.id });
+break;
+case PAMS_2._0.Data.Tab.Problema:
+@await Component.InvokeAsync("Problema", new { id = @Model.paciente.id });
+break;
+case PAMS_2._0.Data.Tab.ReporteSesion:
+@await Component.InvokeAsync("ReporteSesion", new { id = @Model.paciente.id });
+break;
+case PAMS_2._0.Data.Tab.Familiares:
+@await Component.InvokeAsync("Familiares", new { id = @Model.paciente.id });
+break;
+case PAMS_2._0.Data.Tab.HistorialSexual:
+@await Component.InvokeAsync("HistorialSexual", new { id = @Model.paciente.id });
+break;
+default:
+break;
+}
+
+</div>
+<partial name="_ValidationScriptsPartial" />
+<script>
+    $(".nav-pills").find("a").click(function () {
+        $(".nav-tabs").find("a").removeClass("active");
+        $(this).addClass("active");
+       
+    });
+</script>

@@ -1,0 +1,77 @@
+﻿@model PAMS_2._0.Data.ViewModel;
+@{
+    ViewData["Title"] = "Habitos";
+}
+
+
+
+
+@if (Model.problema == null)
+{
+    <p>No existen Registros.</p>
+
+}
+else if (Model.listaProblema.Count() > 0)
+{
+    <div class="container">
+       
+        <div class="row">
+            <div class="col-sm-10">
+                @if (TempData["message"] != null)
+                {
+            <div class="alert alert-warning alert-dismissible fade show " role="alert">
+                @TempData["message"]
+                <button type="button" class="close" date-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>}
+                <hr />
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5>Problema</h5>
+                    </div>
+                </div>
+                <form method="post" asp-action="Edit" asp-controller="Pro">
+                    <input type="hidden" asp-for="@Model.problema.idPaciente" />
+                    <input type="hidden" asp-for="@Model.problema.id" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.problema.acciones" class="control-label"></label>
+                        <textarea asp-for="@Model.problema.acciones" class="form-control"></textarea>
+                        <span asp-validation-for="@Model.problema.acciones" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.problema.causas" class="control-label"></label>
+                        <textarea asp-for="@Model.problema.causas" class="form-control"></textarea>
+                        <span asp-validation-for="@Model.problema.causas" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.problema.evolucion" class="control-label"></label>
+                        <textarea asp-for="@Model.problema.evolucion" class="form-control"></textarea>
+                        <span asp-validation-for="@Model.problema.evolucion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.problema.implicaciones" class="control-label"></label>
+                        <textarea asp-for="@Model.problema.implicaciones" class="form-control"></textarea>
+                        <span asp-validation-for="@Model.problema.implicaciones" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="submit" value="Actualizar Datos" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

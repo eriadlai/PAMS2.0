@@ -1,0 +1,36 @@
+﻿@model PAMS_2._0.Data.ViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="card-deck">
+    <div class="card">
+        <img class="card-img-top" src="/images/Profile.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Perfil</h5>
+            <p class="card-text">Aqui podras visualizar la información general de la sesión activa en este momento.</p>
+            
+            <a asp-controller="Login" asp-action="Perfil" class="btn btn-outline-dark">Perfil del Usuario</a>
+
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="/images//Psic.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Acerca de PAMS</h5>
+            <p class="card-text">PAMS es un sistema de gestión de información psicológica, el cual facilita las tareas administrativas de los profesionistas.</p>
+            <a asp-controller="Home" asp-action="Privacy" class="btn btn-outline-primary">Leer Mas</a>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="/images/Paciente.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Pacientes</h5>
+            <p class="card-text">Aquí podrás encontrar a todos los pacientes registrados y su información general.</p>
+            
+            <a asp-controller="Pacientes" asp-action="Index"  class="btn btn-outline-info">Ir a lista de Pacientes</a>
+
+        </div>
+    </div>
+</div>
+
