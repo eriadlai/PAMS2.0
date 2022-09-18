@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4wL7Hw0MGV213yS19VPM5T6Nk9hFAcdgGtJkWz8cJWyw2NyoAgDYDVHfyHLDWGUILVoEZPS+PeQye2dIVopQIA==",
+  "dgSpecHash": "FAZw0MpQZOvJanoXlHHEQMIGG4DSzDO4U9/8icbFUt6VVSKF0seiek+2v565ISOeF0MyVxrPN1sC0V9GG992xw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eri_a\\source\\repos\\PAMS2.0-Tabulacionv2\\PAMS_2.0\\PAMS_2.0.csproj",
+  "projectFilePath": "G:\\Documentos SSD\\Programacion SSD\\Github Desktop\\PAMS2.0\\PAMS_2.0\\PAMS_2.0.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eri_a\\.nuget\\packages\\common.logging\\3.4.1\\common.logging.3.4.1.nupkg.sha512",
     "C:\\Users\\eri_a\\.nuget\\packages\\common.logging.core\\3.4.1\\common.logging.core.3.4.1.nupkg.sha512",
@@ -178,7 +178,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"Lorem.NET 1.0.6\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net5.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "Package 'Lorem.NET 1.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "Lorem.NET",
       "targetGraphs": [
         "net5.0"
