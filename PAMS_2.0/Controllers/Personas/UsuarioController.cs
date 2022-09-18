@@ -33,6 +33,7 @@ namespace PAMS_2._0.Controllers
         }
         public IActionResult Index()
         {
+
             if (HttpContext.Session.GetString("usuario") == null)
             {
                 return RedirectToAction("Index", "Login");

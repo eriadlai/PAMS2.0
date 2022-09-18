@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3bJzJqu/Nmk1Y2I7IVzyp+INviWD686mJqZ6KoAfL5uzvQoFfV+LtJcxH2n8CXbhCSpjkdp4Qcq9ckTwf3jcIA==",
+  "dgSpecHash": "+v4F43HPIeGK9kSZ8WQJ08asMEAJagUc9g01fQAjjpO5kkMBO0jSw4tKqPzVYlZb3aiGkh+LYt8GKUy53kRh5A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eri_a\\source\\repos\\PAMS_2.0\\PAMS_2.0\\PAMS_2.0.csproj",
+  "projectFilePath": "G:\\Documentos SSD\\Programacion SSD\\Github Desktop\\PAMS2.0\\PAMS_2.0\\PAMS_2.0.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eri_a\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\eri_a\\.nuget\\packages\\lorem.net\\1.0.6\\lorem.net.1.0.6.nupkg.sha512",
@@ -140,14 +140,18 @@
     "C:\\Users\\eri_a\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\eri_a\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\eri_a\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\eri_a\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\eri_a\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\eri_a\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512",
+    "C:\\Users\\eri_a\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\eri_a\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\eri_a\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"Lorem.NET 1.0.6\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net5.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "Package 'Lorem.NET 1.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
       "libraryId": "Lorem.NET",
       "targetGraphs": [
         "net5.0"
