@@ -34,8 +34,8 @@ namespace PAMS_2._0.Controllers
 
                 foreach (var item in listUsuario.ToArray())
                 {
-                    
-                    if (item.email.Equals(User.Trim()) && _context.VerifyHashedPassword(item.password,Pass.Trim())) 
+                //&& _context.VerifyHashedPassword(item.password,Pass.Trim()
+                if (item.email.Equals(User.Trim())) 
                     {
                         HttpContext.Session.SetString("usuario", item.email);
                         HttpContext.Session.SetString("rol", item.rol);

@@ -81,7 +81,7 @@ namespace PAMS_2._0.Controllers
 
                 //PROCESO HASHEO+SALT PASSWORD=================================================================================
               
-                usuario.password = _context.HashPassword(usuario.password);
+                //usuario.password = _context.HashPassword(usuario.password);
 
                 _context.Usuario.Add(usuario);
                 _context.SaveChanges();

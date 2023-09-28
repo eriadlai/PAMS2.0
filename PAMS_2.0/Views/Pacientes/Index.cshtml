@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Lista de Usuarios</h1>
+<h1>Lista de Pacientes</h1>
 <div class="container">
     @if (TempData["message"] != null)
     {
@@ -18,10 +18,7 @@
     }
     <div class="row">
         <div class="col-sm-6">
-            <h3>Lista de Usuarios</h3>
-        </div>
-        <div class="col-sm-6">
-            <a class="btn btn-success d-block" asp-action="Create" asp-controller="Pacientes">Agregar Usuario</a>
+            <a class="btn btn-success d-block" asp-action="Create" asp-controller="Pacientes">Agregar Paciente</a>
         </div>
     </div>
     <div class="row">
