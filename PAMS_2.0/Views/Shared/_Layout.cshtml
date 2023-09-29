@@ -25,25 +25,25 @@
                         {
 
                          <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Pagina Principal</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Desarrollo</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Development</a>
                         </li>
 
                             @switch (Model.rol)
                             {
                                  case "Administrador":
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Usuarios</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Users</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Pacientes" asp-action="Index">Pacientes</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Pacientes" asp-action="Index">Patients</a>
                                 </li>
                                 break;
                                 case "Psicologo":
                                    <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Pacientes" asp-action="Index">Pacientes</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Pacientes" asp-action="Index">Patients</a>
                                    </li>
                                 break;
                                            
@@ -53,8 +53,8 @@
                                     @Model.Sesion
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" asp-area="" asp-controller="Login" asp-action="Perfil">Perfil</a>
-                                    <a class="dropdown-item " asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Login" asp-action="Perfil">Profile</a>
+                                    <a class="dropdown-item " asp-area="" asp-controller="Home" asp-action="Logout">Log out</a>
                                 </div>
                             </li>
 
@@ -75,7 +75,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - PAMS - Adlai CG - <a asp-area="" asp-controller="Home" asp-action="Privacy">Acerca de PAMS</a>
+            2021 - PAMS - Adlai CG - <a asp-area="" asp-controller="Home" asp-action="Privacy">About PAMS</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

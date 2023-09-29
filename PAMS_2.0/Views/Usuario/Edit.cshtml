@@ -1,6 +1,6 @@
 ﻿@model PAMS_2._0.Data.ViewModel;
 @{
-    ViewData["Title"] = "Editar Usuario";
+    ViewData["Title"] = "Edit user";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h3>Editar datos del Usuario @Model.usuario.nombre @Model.usuario.apellido</h3>
+            <h3>Edit user data @Model.usuario.nombre @Model.usuario.apellido</h3>
         </div>
     </div>
     <div class="row">
@@ -70,7 +70,7 @@
                 <span asp-validation-for="@Model.usuario.rol" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Editar Usuario" class="btn btn-primary" />
+                <input type="submit" value="Edit User" class="btn btn-primary" />
             </div>
         </form>
         </div>
