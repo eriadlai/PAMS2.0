@@ -54,10 +54,18 @@
             <td>@item.fechaRegistro</td>
             <td>@item.ultimaActualizacion</td>
             <td>
-                <a asp-controller="Pacientes" asp-action="Edit" asp-route-id="@item.id" class="btn btn-warning">Edit</a>
-                <a asp-controller="Pacientes" asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Delete</a>
-                <a asp-controller="Pacientes" asp-action="DetallesGenerales" asp-route-id="@item.id" class="btn btn-primary">Details</a>
-                <a asp-controller="Pacientes" asp-action="PDF" asp-route-id="@item.id" class="btn btn-outline-info">Generate PDF</a>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownPatients" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Options
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownPatients">
+                                        <a class="dropdown-item" asp-controller="Pacientes" asp-action="Edit" asp-route-id="@item.id" class="btn btn-warning">Edit</a>
+                                        <a class="dropdown-item" asp-controller="Pacientes" asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Delete</a>
+                                        <a class="dropdown-item" asp-controller="Pacientes" asp-action="DetallesGenerales" asp-route-id="@item.id" class="btn btn-primary">Details</a>
+                                        <a class="dropdown-item" asp-controller="Pacientes" asp-action="PDF" asp-route-id="@item.id" class="btn btn-outline-info">Generate PDF</a>
+                                    </div>
+                                </div>
+                                
             </td>
 
         </tr>}

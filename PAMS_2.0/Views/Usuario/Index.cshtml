@@ -54,9 +54,17 @@
                         <td>@item.telefono</td>
                         <td>@item.rol</td>
                         <td>
-                            <a asp-controller="Usuario" asp-action="Edit" asp-route-id="@item.id" class="btn btn-warning">Edit</a>
-                            <a asp-controller="Usuario" asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Delete</a>
-                            <a asp-controller="Usuario" asp-action="EditPassword" asp-route-id="@item.id" class="btn btn-primary">Edit password</a>
+                            <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Options
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownUser">
+                                        <a class="dropdown-item" asp-controller="Usuario" asp-action="Edit" asp-route-id="@item.id" class="btn btn-warning">Edit</a>
+                                        <a class="dropdown-item" asp-controller="Usuario" asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Delete</a>
+                                        <a class="dropdown-item" asp-controller="Usuario" asp-action="EditPassword" asp-route-id="@item.id" class="btn btn-primary">Edit password</a>
+                                    </div>
+                            </div>
+                                
                         </td>
 
                     </tr>
