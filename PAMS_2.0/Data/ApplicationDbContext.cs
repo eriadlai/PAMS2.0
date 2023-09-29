@@ -371,7 +371,7 @@ namespace PAMS_2._0.Data
             //Fuentes
             PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
             PdfFont font2 = PdfFontFactory.CreateFont(StandardFonts.TIMES_BOLD);
-            var pdfPath= "\\reportes" + "\\" + paciente.nombre + " " + paciente.apellido + ".pdf";
+            var pdfPath= ".\\reportes" + "\\" + paciente.nombre + " " + paciente.apellido + ".pdf";
             var path = Path.Combine(env.WebRootPath,pdfPath);
             
             //titulo

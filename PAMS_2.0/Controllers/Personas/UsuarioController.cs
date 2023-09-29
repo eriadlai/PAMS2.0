@@ -81,7 +81,7 @@ namespace PAMS_2._0.Controllers
 
                 //PROCESO HASHEO+SALT PASSWORD=================================================================================
               
-                usuario.password = _context.HashPassword(usuario.password);
+                //usuario.password = _context.HashPassword(usuario.password);
 
                 _context.Usuario.Add(usuario);
                 _context.SaveChanges();
@@ -267,7 +267,7 @@ namespace PAMS_2._0.Controllers
             {
                 usuario.foto = _context.GetUserByte(usuario);
                 usuario.fotoFile = _context.GetFormFile(_env);
-                usuario.password = _context.HashPassword(usuario.password);
+                usuario.password = usuario.password;//_context.HashPassword(usuario.password);
                 _context.Usuario.Update(usuario);
                 _context.SaveChanges();
                 TempData["message"] = "Contraseña Actualizada!";
